@@ -1,0 +1,29 @@
+{
+  "name": "omnimap",
+  "version": "0.1.0",
+  "description": "Map multiple array/object",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjessec/omnimap.git"
+  },
+  "keywords": [
+    "map",
+    "array",
+    "object",
+    "zip",
+    "zipObject"
+  ],
+  "author": "Jesse Chung <jesse@soob.co>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kjessec/omnimap/issues"
+  },
+  "homepage": "https://github.com/kjessec/omnimap#readme",
+  "devDependencies": {
+    "chai": "^3.4.1"
+  }
+}
