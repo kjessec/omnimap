@@ -15,7 +15,7 @@ const result = omnimap([1,2,3], [4,5,6], function(a, b, idx, arr) {
 console.log(result); // [5, 7, 9];
 ````
 
-You can do three arrays as well. Well, just give it any number of enumerable things, and it'll map through.
+You can do three arrays as well. Well, just give it any number of arrays, and it'll map through.
 ````javascript
 'use strict';
 const omnimap = require('omnimap');
@@ -46,7 +46,7 @@ console.log(result.toArray()); // [5, 7, 9];
 ````
 
 ### Optional lazy evaluation
-If you don't pass a function as the last element, it will return a runner function which you can invoke later by giving a mapper function.
+If you don't pass a callback function as the last argument, it will return a evaluator which you can call with a callback.
 
 ````javascript
 'use strict';
