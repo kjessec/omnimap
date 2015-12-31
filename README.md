@@ -45,7 +45,7 @@ For object mapping, we have a convenient tool that converts the result object in
 console.log(result.toArray()); // [5, 7, 9];
 ````
 
-### Optional currying
+### Optional lazy evaluation
 If you don't pass a function as the last element, it will return a runner function which you can invoke later by giving a mapper function.
 
 ````javascript
@@ -84,6 +84,6 @@ Promise.all(task).then(function(results) {
 ````
 
 ## Caveats
-1. The maximum iteration count is always defined by the `length` of the first enumerable given. Make sure that the length of subsequent enumerables are less or equal to the length of the first enumerable, otherwise it would fail node.js VM (undefined reference errors).
-2. Object mapping returns its own instance, `OmnimapObject`, rather than a plain object stuffed with the desired result. This is to hide `.toArray()` method behind the prototype. However, since `OmnimapObject` is merely a wrapper class that only attached `.toArray()` to its prototype, it still is compatible with all `Object.prototype` methods.
+1. The maximum iteration count is always the `length` of the first enumerable given. Make sure that the length of following enumerables are less than or equal to the length of the first enumerable. It would fail node.js VM (undefined reference errors).
+2. Object mapping returns its own instance, `OmnimapObject`, rather than a plain object. This is to hide `.toArray()` method behind the prototype. However, it still is compatible with all `Object.prototype` methods.
 3. Because of the Caveat#2, testing methods such as `chai.assert.deepEqual` would fail. You will have to iterate over each key manually, and assert each member individually.

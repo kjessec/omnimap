@@ -2,7 +2,7 @@
 var omnimap = require('../index');
 var assert = require('chai').assert;
 
-describe('omnimap/currying', function() {
+describe('omnimap/lazyEvaluation', function() {
   it('should return a function when no callback is given', function() {
     var src = {
       a: 1,
