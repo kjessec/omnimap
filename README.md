@@ -60,26 +60,32 @@ console.log(result); // [5, 7, 9];
 ````
 
 ## The real reason why I made this
+Promise.
+
 ````javascript
+function doSomethingLethal(payload) {
+  return someLethalPromiseFunc(payload);
+}
+
 const omnimap = require('omnimap');
 const controllers = [
-  promiseControllerInstanceA,
-  promiseControllerInstanceB,
-  promiseControllerInstanceC,
+  doSomethingLethal,
+  doSomethingLethal,
+  doSomethingLethal,
 ];
 const payloads = [
-  payloadForA,
-  payloadForB,
-  payloadForC
+  { msg: 'Hello' },
+  { msg: 'World' },
+  { msg: '世界' }
 ];
 
 const task = omnimap(controllers, payloads, function(controller, payload, idx) {
-  payload.taskId = idx;
+  payload.id = idx;
   return controller(payload);
 });
 
 Promise.all(task).then(function(results) {
-  /* Consume results here */
+  console.log(results);
 });
 ````
 
