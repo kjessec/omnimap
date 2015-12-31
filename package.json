@@ -1,6 +1,6 @@
 {
   "name": "omnimap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Map over multiple array/object without thinking too much.",
   "main": "index.js",
   "scripts": {
